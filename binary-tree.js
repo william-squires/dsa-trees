@@ -113,13 +113,15 @@ class BinaryTreeNode {
         } else if (node.right === node1) {
           node1Parent = node;
           break;
-        }
-      } 
+        }     
+      }
+      if (node1Parent) break;
       queue = tmp
       node1Depth++;
     }
 
     queue = [this];
+    
 
     while (queue.length) {
       const tmp = []
@@ -133,10 +135,14 @@ class BinaryTreeNode {
           node2Parent = node;
           break;
         }
-      } 
+      }
+      if (node2Parent) break;
       queue = tmp
       node2Depth++;
     }
+
+    console.log('node1Parent=', node1Parent, 'node2Parent=', node2Parent);
+    console.log('node1depth=', node1Depth, 'node2depth=', node2Depth);
     if (node1Parent !== node2Parent && node1Depth === node2Depth) {
       return true;
     }
