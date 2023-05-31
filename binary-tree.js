@@ -13,27 +13,39 @@ class BinaryTreeNode {
    * incomplete node-- that is, the length of the shortest path from the root to
    * a node with less than two children. */
   minDepthToIncompleteNode() {
+    const queue = [this];
 
+    if (!this.left && !this.right) {
+      return 1;
+    }
+
+    let minDepth = 1;
+
+    while (queue.length) {
+      let current = queue.shift();
+
+      if (!current.left || !current.right) {
+        return minDepth;
+      }
+
+      queue.push(this.left);
+      queue.push(this.right);
+      minDepth += 1;
+    }
   }
 
   /** maxDepth(): return the maximum depth from the invoking node -- that is,
    * the length of the longest path from the invoking node to a leaf. */
-  maxDepth() {
-
-  }
+  maxDepth() {}
 
   /** minDepth(): return the minimum depth from the invoking node -- that is,
    * the length of the shortest path from the invoking node to a leaf. */
-   minDepth() {
-
-  }
+  minDepth() {}
 
   /** nextLarger(lowerBound): return the smallest value from the invoking node
    * that is larger than lowerBound. Return null if no such value exists. */
 
-  nextLarger(lowerBound) {
-
-  }
+  nextLarger(lowerBound) {}
 }
 
 class BinaryTree {
@@ -48,7 +60,7 @@ class BinaryTree {
   // this is a stack or recursion problem; we'll use recursion
 
   minDepthToIncompleteNode() {
-
+    return this.root ? this.root.minDepthToIncompleteNode() : 0;
   }
 
   /** maxDepth(): return the maximum depth of the tree -- that is,
@@ -56,33 +68,25 @@ class BinaryTree {
 
   // this is a stack or recursion problem; we'll use recursion
 
-  maxDepth() {
-
-  }
+  maxDepth() {}
 
   /** minDepth(): return the minimum depth of the tree -- that is,
    * the length of the shortest path from the root to a leaf. */
 
   // this is a stack or recursion problem; we'll use recursion
 
-  minDepth() {
-
-  }
+  minDepth() {}
 
   /** nextLarger(lowerBound): return the smallest value in the tree
    * that is larger than lowerBound. Return null if no such value exists. */
 
-  nextLarger(lowerBound) {
-
-  }
+  nextLarger(lowerBound) {}
 
   /** Further study!
    * areCousins(node1, node2): determine whether two nodes are cousins
    * (i.e. are at the same level but have different parents. ) */
 
-  areCousins(node1, node2) {
-
-  }
+  areCousins(node1, node2) {}
 }
 
 module.exports = { BinaryTree, BinaryTreeNode };

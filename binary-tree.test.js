@@ -72,41 +72,41 @@ beforeEach(function() {
   longTree = new BinaryTree(r);
 });
 
-// describe("minDepthToIncompleteNode", function() {
-//   it("handles simple trees", function() {
-//     expect(smallTree.minDepthToIncompleteNode()).toBe(2);
-//   });
+describe("minDepthToIncompleteNode", function() {
+  it("handles simple trees", function() {
+    expect(smallTree.minDepthToIncompleteNode()).toBe(2);
+  });
 
-//   it("handles more complex trees", function() {
-//     expect(largeTree.minDepthToIncompleteNode()).toBe(2);
-//   });
+  it("handles more complex trees", function() {
+    expect(largeTree.minDepthToIncompleteNode()).toBe(2);
+  });
 
-//   it("handles empty trees", function() {
-//     expect(emptyTree.minDepthToIncompleteNode()).toBe(0);
-//   });
+  it("handles empty trees", function() {
+    expect(emptyTree.minDepthToIncompleteNode()).toBe(0);
+  });
 
-//   it("handles long tree", function () {
-//     expect(longTree.minDepthToIncompleteNode()).toBe(2);
-//   });
-// });
+  it("handles long tree", function () {
+    expect(longTree.minDepthToIncompleteNode()).toBe(2);
+  });
+});
 
-// describe("maxDepth", function() {
-//   it("handles simple trees", function() {
-//     expect(smallTree.maxDepth()).toBe(2);
-//   });
+describe("maxDepth", function() {
+  it("handles simple trees", function() {
+    expect(smallTree.maxDepth()).toBe(2);
+  });
 
-//   it("handles more complex trees", function() {
-//     expect(largeTree.maxDepth()).toBe(4);
-//   });
+  it("handles more complex trees", function() {
+    expect(largeTree.maxDepth()).toBe(4);
+  });
 
-//   it("handles empty trees", function() {
-//     expect(emptyTree.maxDepth()).toBe(0);
-//   });
+  it("handles empty trees", function() {
+    expect(emptyTree.maxDepth()).toBe(0);
+  });
 
-//   it("handles long tree", function () {
-//     expect(longTree.maxDepth()).toBe(5);
-//   });
-// });
+  it("handles long tree", function () {
+    expect(longTree.maxDepth()).toBe(5);
+  });
+});
 
 // describe("minDepth", function() {
 //   it("handles simple trees", function() {
