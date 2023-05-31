@@ -108,23 +108,23 @@ describe("maxDepth", function() {
   });
 });
 
-// describe("minDepth", function() {
-//   it("handles simple trees", function() {
-//     expect(smallTree.minDepth()).toBe(2);
-//   });
+describe("minDepth", function() {
+  it("handles simple trees", function() {
+    expect(smallTree.minDepth()).toBe(2);
+  });
 
-//   it("handles more complex trees", function() {
-//     expect(largeTree.minDepth()).toBe(2);
-//   });
+  it("handles more complex trees", function() {
+    expect(largeTree.minDepth()).toBe(2);
+  });
 
-//   it("handles empty trees", function() {
-//     expect(emptyTree.minDepth()).toBe(0);
-//   });
+  it("handles empty trees", function() {
+    expect(emptyTree.minDepth()).toBe(0);
+  });
 
-//   it("handles long tree", function () {
-//     expect(longTree.minDepth()).toBe(4);
-//   });
-// });
+  it("handles long tree", function () {
+    expect(longTree.minDepth()).toBe(4);
+  });
+});
 
 // describe("nextLarger", function() {
 //   it("handles simple trees", function() {
