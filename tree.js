@@ -47,7 +47,17 @@ class TreeNode {
    * its children, return a count of the number of nodes whose value is greater
    * than lowerBound. */
   numGreater(lowerBound){
+    const stack = [this];
+    let numGreater = 0;
 
+    while (stack.length) {
+      const curr = stack.pop();
+      if (curr.val > lowerBound) {
+        numGreater += 1;
+      }
+      stack.push(...curr.children);
+    }
+    return numGreater;
   }
 }
 
@@ -69,7 +79,7 @@ class Tree {
   /** numGreater(lowerBound): return a count of the number of nodes
    * whose value is greater than lowerBound. */
   numGreater(lowerBound) {
-
+    return this.root ? this.root.numGreater(lowerBound) : 0;
   }
 }
 
