@@ -94,6 +94,60 @@ class BinaryTreeNode {
     }
     return lowestLarger;
   }
+
+  areCousins(node1, node2) {
+    let queue = [this];
+    let node1Depth = 0;
+    let node2Depth = 0;
+    let node1Parent;
+    let node2Parent;
+
+    while (queue.length) {
+      const tmp = []
+      for (const node of queue) {
+        if (node.left && node.left !== node1) tmp.push(node.left)
+        if (node.right && node.right !== node1) tmp.push(node.right)
+        if (node.left === node1) {
+          node1Parent = node;
+          break;
+        } else if (node.right === node1) {
+          node1Parent = node;
+          break;
+        }
+      } 
+      queue = tmp
+      node1Depth++;
+    }
+
+    queue = [this];
+
+    while (queue.length) {
+      const tmp = []
+      for (const node of queue) {
+        if (node.left && node.left !== node2) tmp.push(node.left)
+        if (node.right && node.right !== node2) tmp.push(node.right)
+        if (node.left === node2) {
+          node2Parent = node;
+          break;
+        } else if (node.right === node2) {
+          node2Parent = node;
+          break;
+        }
+      } 
+      queue = tmp
+      node2Depth++;
+    }
+    if (node1Parent !== node2Parent && node1Depth === node2Depth) {
+      return true;
+    }
+    return false;
+  }
+
+
+
+
+
+
 }
 
 class BinaryTree {
@@ -140,7 +194,9 @@ class BinaryTree {
    * areCousins(node1, node2): determine whether two nodes are cousins
    * (i.e. are at the same level but have different parents. ) */
 
-  areCousins(node1, node2) {}
+  areCousins(node1, node2) {
+    return this.root ? this.root.areCousins(node1, node2) : false;
+  }
 }
 
 module.exports = { BinaryTree, BinaryTreeNode };

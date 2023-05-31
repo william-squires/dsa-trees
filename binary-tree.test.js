@@ -151,70 +151,70 @@ describe("minDepth", function() {
 //   });
 // });
 
-// describe("areCousins", function() {
-//   // build tree1 with cousins
-//   //
-//   //                  root
-//   //                    |
-//   //                    1
-//   //                 /     \
-//   //               2         3
-//   //             /   \     /   \
-//   //            4     5   6     7
-//   //
+describe("areCousins", function() {
+  // build tree1 with cousins
+  //
+  //                  root
+  //                    |
+  //                    1
+  //                 /     \
+  //               2         3
+  //             /   \     /   \
+  //            4     5   6     7
+  //
 
-//   let n7 = new BinaryTreeNode(7);
-//   let n6 = new BinaryTreeNode(6);
-//   let n5 = new BinaryTreeNode(5);
-//   let n4 = new BinaryTreeNode(4);
-//   let n3 = new BinaryTreeNode(3, n6, n7);
-//   let n2 = new BinaryTreeNode(2, n4, n5);
-//   let root = new BinaryTreeNode(1, n2, n3);
-//   let tree1 = new BinaryTree(root);
+  let n7 = new BinaryTreeNode(7);
+  let n6 = new BinaryTreeNode(6);
+  let n5 = new BinaryTreeNode(5);
+  let n4 = new BinaryTreeNode(4);
+  let n3 = new BinaryTreeNode(3, n6, n7);
+  let n2 = new BinaryTreeNode(2, n4, n5);
+  let root = new BinaryTreeNode(1, n2, n3);
+  let tree1 = new BinaryTree(root);
 
-//   // build tree2 with cousins
-//   //                   6
-//   //                /     \
-//   //               5       5
-//   //              /         \
-//   //             4           3
-//   //            /          /  \
-//   //           3          2    1
-//   //         /   \       /
-//   //        2     1     1
-//   //
+  // build tree2 with cousins
+  //                   6
+  //                /     \
+  //               5       5
+  //              /         \
+  //             4           3
+  //            /          /  \
+  //           3          2    1
+  //         /   \       /
+  //        2     1     1
+  //
 
-//   let j = new BinaryTreeNode(1);
-//   let i = new BinaryTreeNode(1);
-//   let h = new BinaryTreeNode(2);
-//   let g = new BinaryTreeNode(1);
-//   let f = new BinaryTreeNode(2, j, null);
-//   let e = new BinaryTreeNode(3, h, i);
-//   let d = new BinaryTreeNode(3, f, g);
-//   let c = new BinaryTreeNode(4, e, null);
-//   let b = new BinaryTreeNode(5, null, d);
-//   let a = new BinaryTreeNode(5, c, null);
-//   let r = new BinaryTreeNode(6, a, b);
-//   let tree2 = new BinaryTree(r);
+  let j = new BinaryTreeNode(1);
+  let i = new BinaryTreeNode(1);
+  let h = new BinaryTreeNode(2);
+  let g = new BinaryTreeNode(1);
+  let f = new BinaryTreeNode(2, j, null);
+  let e = new BinaryTreeNode(3, h, i);
+  let d = new BinaryTreeNode(3, f, g);
+  let c = new BinaryTreeNode(4, e, null);
+  let b = new BinaryTreeNode(5, null, d);
+  let a = new BinaryTreeNode(5, c, null);
+  let r = new BinaryTreeNode(6, a, b);
+  let tree2 = new BinaryTree(r);
 
-//   it("tree1: returns true if they are cousins, false if not", function() {
-//     expect(tree1.areCousins(n4, n6)).toBe(true);
-//     expect(tree1.areCousins(n4, n7)).toBe(true);
-//     expect(tree1.areCousins(n5, n6)).toBe(true);
-//     expect(tree1.areCousins(n5, n7)).toBe(true);
-//     expect(tree1.areCousins(n2, n3)).toBe(false);
-//     expect(tree1.areCousins(n4, n5)).toBe(false);
-//     expect(tree1.areCousins(n6, n7)).toBe(false);
-//     expect(tree1.areCousins(n4, n3)).toBe(false);
-//     expect(tree1.areCousins(root, n3)).toBe(false);
-//   });
+  it("tree1: returns true if they are cousins, false if not", function() {
+    expect(tree1.areCousins(n4, n6)).toBe(true);
+    expect(tree1.areCousins(n4, n7)).toBe(true);
+    expect(tree1.areCousins(n5, n6)).toBe(true);
+    expect(tree1.areCousins(n5, n7)).toBe(true);
+    expect(tree1.areCousins(n2, n3)).toBe(false);
+    expect(tree1.areCousins(n4, n5)).toBe(false);
+    expect(tree1.areCousins(n6, n7)).toBe(false);
+    expect(tree1.areCousins(n4, n3)).toBe(false);
+    expect(tree1.areCousins(root, n3)).toBe(false);
+  });
 
-//   it("tree2: returns true if they are cousins, false if not", function(){
-//     expect(tree2.areCousins(h, j)).toBe(true);
-//     expect(tree2.areCousins(c, d)).toBe(true);
+  it("tree2: returns true if they are cousins, false if not", function(){
+    expect(tree2.areCousins(h, j)).toBe(true);
+    expect(tree2.areCousins(c, d)).toBe(true);
 
-//     expect(tree2.areCousins(a, b)).toBe(false);
-//     expect(tree2.areCousins(f, g)).toBe(false);
-//   });
-// });
+    expect(tree2.areCousins(a, b)).toBe(false);
+    expect(tree2.areCousins(f, g)).toBe(false);
+  });
+});
 
