@@ -76,7 +76,24 @@ class BinaryTreeNode {
   /** nextLarger(lowerBound): return the smallest value from the invoking node
    * that is larger than lowerBound. Return null if no such value exists. */
 
-  nextLarger(lowerBound) {}
+  nextLarger(lowerBound) {
+    let lowestLarger = null
+    let stack = [this]
+
+    while (stack.length) {
+      const curr = stack.pop();
+      if (curr.val > lowerBound) {
+        if (lowestLarger === null) {
+          lowestLarger = curr.val;
+        } else if (lowestLarger > curr.val) {
+          lowestLarger = curr.val
+        }
+      }
+      if (curr.left) stack.push(curr.left);
+      if (curr.right) stack.push(curr.right);
+    }
+    return lowestLarger;
+  }
 }
 
 class BinaryTree {
@@ -115,7 +132,9 @@ class BinaryTree {
   /** nextLarger(lowerBound): return the smallest value in the tree
    * that is larger than lowerBound. Return null if no such value exists. */
 
-  nextLarger(lowerBound) {}
+  nextLarger(lowerBound) {
+    return this.root ? this.root.nextLarger(lowerBound) : null;
+  }
 
   /** Further study!
    * areCousins(node1, node2): determine whether two nodes are cousins
