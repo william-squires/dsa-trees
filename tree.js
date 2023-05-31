@@ -28,7 +28,19 @@ class TreeNode {
    * children, count how many nodes have even values. Returns that count as
    * an integer. */
   countEvens() {
+    const stack = [this];
+    let numEven = 0;
 
+    while (stack.length) {
+      const curr = stack.pop();
+      if (curr.val % 2 === 0) {
+        numEven += 1;
+      }
+      for (let child of curr.children) {
+        stack.push(child);
+      }
+    }
+    return numEven;
   }
 
   /** numGreater(lowerBound): starting from the invoking node and moving through
@@ -47,12 +59,11 @@ class Tree {
   /** sumValues(): add up all values in the tree. */
   sumValues() {
     return this.root ? this.root.sumValues() : 0
-
   }
 
   /** countEvens(): count all nodes in the tree that have even values. */
   countEvens() {
-
+    return this.root ? this.root.countEvens() : 0;
   }
 
   /** numGreater(lowerBound): return a count of the number of nodes
